@@ -44,6 +44,10 @@ if test -e "$HOME/pb"; then
 fi
 
 cd
+ls -la
+ls -la pb
+ls -la pb/bin
+
 rm -rf pb
 mkdir pb
 
