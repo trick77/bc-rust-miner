@@ -29,7 +29,7 @@ jobs:
       uses: actions/cache@v2
       with:
         path: ~/pb
-        key: pb-linux
+        key: pb-${{ runner.os }}
     - name: Install protobuf
       run: ci/install-protobuf.sh
       shell: bash
