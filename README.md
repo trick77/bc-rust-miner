@@ -10,4 +10,4 @@ An attempt to resuscitate an old Block Collider Rust miner implementation by @ko
 rustup install nightly
 rustup update
 rustup component add rust-src
-cargo build --release
+RUST_BACKTRACE=full cargo build --release --verbose
