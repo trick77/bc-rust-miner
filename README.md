@@ -1,5 +1,7 @@
 # bc-rust-miner
 
+[![Linux build status](https://travis-ci.com/trick77/bc-rust-miner.svg)](https://travis-ci.com/trick77/bc-rust-miner)
+
 An attempt to resuscitate an old Block Collider Rust miner implementation by @korczis but be prepared to Waietng... a lot
 
 ## How to build
