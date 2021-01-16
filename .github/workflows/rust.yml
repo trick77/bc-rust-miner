@@ -8,6 +8,8 @@ on:
 
 env:
   CARGO_TERM_COLOR: always
+  PROTOBUF_VERSION: 3.6.1
+  RUST_BACKTRACE: 1
 
 jobs:
   build:
@@ -15,6 +17,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Install protobuf
+      run: ci/install-protobuf.sh
+      shell: bash
+    - name: Protoc check
+      run: protoc --version
+      shell: bash
     - uses: actions/checkout@v2
     - name: Build
       run: cargo build --verbose
