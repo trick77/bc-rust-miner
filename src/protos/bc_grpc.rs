@@ -30,6 +30,8 @@ pub trait Bc {
 
     fn get_latest_rovered_blocks(&self, o: ::grpc::RequestOptions, p: super::core::Null) -> ::grpc::SingleResponse<super::bc::GetRoveredBlocksResponse>;
 
+    fn get_nrg_supply(&self, o: ::grpc::RequestOptions, p: super::core::Null) -> ::grpc::SingleResponse<super::bc::GetNrgSupplyResponse>;
+
     fn get_block_hash(&self, o: ::grpc::RequestOptions, p: super::bc::GetBlockHashRequest) -> ::grpc::SingleResponse<super::core::BcBlock>;
 
     fn get_block_height(&self, o: ::grpc::RequestOptions, p: super::bc::GetBlockHeightRequest) -> ::grpc::SingleResponse<super::core::BcBlock>;
@@ -43,6 +45,8 @@ pub trait Bc {
     fn get_tx(&self, o: ::grpc::RequestOptions, p: super::bc::GetTxRequest) -> ::grpc::SingleResponse<super::core::Transaction>;
 
     fn get_marked_tx(&self, o: ::grpc::RequestOptions, p: super::bc::GetMarkedTxRequest) -> ::grpc::SingleResponse<super::core::MarkedTransaction>;
+
+    fn get_marked_txs_for_matched_order(&self, o: ::grpc::RequestOptions, p: super::bc::GetOutPointRequest) -> ::grpc::SingleResponse<super::bc::GetMarkedTxs>;
 
     fn get_trade_status(&self, o: ::grpc::RequestOptions, p: super::bc::GetOutPointRequest) -> ::grpc::SingleResponse<super::bc::GetTradeStatusResponse>;
 
@@ -70,7 +74,7 @@ pub trait Bc {
 
     fn get_wallet(&self, o: ::grpc::RequestOptions, p: super::bc::GetBalanceRequest) -> ::grpc::SingleResponse<super::core::WalletData>;
 
-    fn get_spendable_outpoints(&self, o: ::grpc::RequestOptions, p: super::bc::GetBalanceRequest) -> ::grpc::SingleResponse<super::core::WalletData>;
+    fn get_spendable_outpoints(&self, o: ::grpc::RequestOptions, p: super::bc::GetSpendableCollateralRequest) -> ::grpc::SingleResponse<super::core::WalletData>;
 
     fn get_spendable_collateral(&self, o: ::grpc::RequestOptions, p: super::bc::GetSpendableCollateralRequest) -> ::grpc::SingleResponse<super::bc::GetSpendableCollateralResponse>;
 
@@ -78,11 +82,11 @@ pub trait Bc {
 
     fn get_transfers(&self, o: ::grpc::RequestOptions, p: super::bc::TransferRequest) -> ::grpc::SingleResponse<super::bc::TransferResponse>;
 
-    fn get_open_orders(&self, o: ::grpc::RequestOptions, p: super::bc::GetBalanceRequest) -> ::grpc::SingleResponse<super::bc::GetOpenOrdersResponse>;
+    fn get_open_orders(&self, o: ::grpc::RequestOptions, p: super::bc::GetSpendableCollateralRequest) -> ::grpc::SingleResponse<super::bc::GetOpenOrdersResponse>;
 
-    fn get_matched_orders(&self, o: ::grpc::RequestOptions, p: super::bc::GetBalanceRequest) -> ::grpc::SingleResponse<super::bc::GetMatchedOrdersResponse>;
+    fn get_matched_orders(&self, o: ::grpc::RequestOptions, p: super::bc::GetSpendableCollateralRequest) -> ::grpc::SingleResponse<super::bc::GetMatchedOrdersResponse>;
 
-    fn get_historical_orders(&self, o: ::grpc::RequestOptions, p: super::bc::GetHistoryRequest) -> ::grpc::SingleResponse<super::bc::GetMatchedOrdersResponse>;
+    fn get_historical_orders(&self, o: ::grpc::RequestOptions, p: super::bc::GetHistoryRequest) -> ::grpc::SingleResponse<super::bc::GetHistoricalOrdersResponse>;
 
     fn get_unmatched_orders(&self, o: ::grpc::RequestOptions, p: super::bc::GetBalanceRequest) -> ::grpc::SingleResponse<super::bc::GetOpenOrdersResponse>;
 
@@ -107,6 +111,7 @@ pub struct BcClient {
     method_GetRoveredBlockHeight: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetRoveredBlockHeightRequest, super::core::Block>>,
     method_GetRoveredBlocks: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetRoveredBlocksRequest, super::bc::GetRoveredBlocksResponse>>,
     method_GetLatestRoveredBlocks: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::core::Null, super::bc::GetRoveredBlocksResponse>>,
+    method_GetNrgSupply: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::core::Null, super::bc::GetNrgSupplyResponse>>,
     method_GetBlockHash: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetBlockHashRequest, super::core::BcBlock>>,
     method_GetBlockHeight: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetBlockHeightRequest, super::core::BcBlock>>,
     method_GetBlocksHeight: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetBlockHeightRequest, super::bc::GetBlocksResponse>>,
@@ -114,6 +119,7 @@ pub struct BcClient {
     method_GetLatestBlock: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::core::Null, super::core::BcBlock>>,
     method_GetTx: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetTxRequest, super::core::Transaction>>,
     method_GetMarkedTx: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetMarkedTxRequest, super::core::MarkedTransaction>>,
+    method_GetMarkedTxsForMatchedOrder: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetOutPointRequest, super::bc::GetMarkedTxs>>,
     method_GetTradeStatus: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetOutPointRequest, super::bc::GetTradeStatusResponse>>,
     method_GetOutpointStatus: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetOutPointRequest, super::bc::GetOutPointStatusResponse>>,
     method_GetTxClaimedBy: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetOutPointRequest, super::core::Transaction>>,
@@ -127,13 +133,13 @@ pub struct BcClient {
     method_SendTx: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::core::Transaction, super::bc::RpcTransactionResponse>>,
     method_GetBalance: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetBalanceRequest, super::bc::GetBalanceResponse>>,
     method_GetWallet: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetBalanceRequest, super::core::WalletData>>,
-    method_GetSpendableOutpoints: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetBalanceRequest, super::core::WalletData>>,
+    method_GetSpendableOutpoints: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetSpendableCollateralRequest, super::core::WalletData>>,
     method_GetSpendableCollateral: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetSpendableCollateralRequest, super::bc::GetSpendableCollateralResponse>>,
     method_GetUnlockTakerTxParams: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetUnlockTakerTxParamsRequest, super::bc::GetUnlockTakerTxParamsResponse>>,
     method_GetTransfers: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::TransferRequest, super::bc::TransferResponse>>,
-    method_GetOpenOrders: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetBalanceRequest, super::bc::GetOpenOrdersResponse>>,
-    method_GetMatchedOrders: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetBalanceRequest, super::bc::GetMatchedOrdersResponse>>,
-    method_GetHistoricalOrders: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetHistoryRequest, super::bc::GetMatchedOrdersResponse>>,
+    method_GetOpenOrders: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetSpendableCollateralRequest, super::bc::GetOpenOrdersResponse>>,
+    method_GetMatchedOrders: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetSpendableCollateralRequest, super::bc::GetMatchedOrdersResponse>>,
+    method_GetHistoricalOrders: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetHistoryRequest, super::bc::GetHistoricalOrdersResponse>>,
     method_GetUnmatchedOrders: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetBalanceRequest, super::bc::GetOpenOrdersResponse>>,
     method_GetUTXOLength: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetUtxoLengthRequest, super::bc::GetUtxoLengthResponse>>,
     method_GetSTXOLength: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::bc::GetUtxoLengthRequest, super::bc::GetUtxoLengthResponse>>,
@@ -167,6 +173,12 @@ impl BcClient {
             }),
             method_GetLatestRoveredBlocks: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
                 name: "/bc.Bc/GetLatestRoveredBlocks".to_string(),
+                streaming: ::grpc::rt::GrpcStreaming::Unary,
+                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+            }),
+            method_GetNrgSupply: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
+                name: "/bc.Bc/GetNrgSupply".to_string(),
                 streaming: ::grpc::rt::GrpcStreaming::Unary,
                 req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
                 resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
@@ -209,6 +221,12 @@ impl BcClient {
             }),
             method_GetMarkedTx: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
                 name: "/bc.Bc/GetMarkedTx".to_string(),
+                streaming: ::grpc::rt::GrpcStreaming::Unary,
+                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+            }),
+            method_GetMarkedTxsForMatchedOrder: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
+                name: "/bc.Bc/GetMarkedTxsForMatchedOrder".to_string(),
                 streaming: ::grpc::rt::GrpcStreaming::Unary,
                 req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
                 resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
@@ -407,6 +425,10 @@ impl Bc for BcClient {
         self.grpc_client.call_unary(o, p, self.method_GetLatestRoveredBlocks.clone())
     }
 
+    fn get_nrg_supply(&self, o: ::grpc::RequestOptions, p: super::core::Null) -> ::grpc::SingleResponse<super::bc::GetNrgSupplyResponse> {
+        self.grpc_client.call_unary(o, p, self.method_GetNrgSupply.clone())
+    }
+
     fn get_block_hash(&self, o: ::grpc::RequestOptions, p: super::bc::GetBlockHashRequest) -> ::grpc::SingleResponse<super::core::BcBlock> {
         self.grpc_client.call_unary(o, p, self.method_GetBlockHash.clone())
     }
@@ -433,6 +455,10 @@ impl Bc for BcClient {
 
     fn get_marked_tx(&self, o: ::grpc::RequestOptions, p: super::bc::GetMarkedTxRequest) -> ::grpc::SingleResponse<super::core::MarkedTransaction> {
         self.grpc_client.call_unary(o, p, self.method_GetMarkedTx.clone())
+    }
+
+    fn get_marked_txs_for_matched_order(&self, o: ::grpc::RequestOptions, p: super::bc::GetOutPointRequest) -> ::grpc::SingleResponse<super::bc::GetMarkedTxs> {
+        self.grpc_client.call_unary(o, p, self.method_GetMarkedTxsForMatchedOrder.clone())
     }
 
     fn get_trade_status(&self, o: ::grpc::RequestOptions, p: super::bc::GetOutPointRequest) -> ::grpc::SingleResponse<super::bc::GetTradeStatusResponse> {
@@ -487,7 +513,7 @@ impl Bc for BcClient {
         self.grpc_client.call_unary(o, p, self.method_GetWallet.clone())
     }
 
-    fn get_spendable_outpoints(&self, o: ::grpc::RequestOptions, p: super::bc::GetBalanceRequest) -> ::grpc::SingleResponse<super::core::WalletData> {
+    fn get_spendable_outpoints(&self, o: ::grpc::RequestOptions, p: super::bc::GetSpendableCollateralRequest) -> ::grpc::SingleResponse<super::core::WalletData> {
         self.grpc_client.call_unary(o, p, self.method_GetSpendableOutpoints.clone())
     }
 
@@ -503,15 +529,15 @@ impl Bc for BcClient {
         self.grpc_client.call_unary(o, p, self.method_GetTransfers.clone())
     }
 
-    fn get_open_orders(&self, o: ::grpc::RequestOptions, p: super::bc::GetBalanceRequest) -> ::grpc::SingleResponse<super::bc::GetOpenOrdersResponse> {
+    fn get_open_orders(&self, o: ::grpc::RequestOptions, p: super::bc::GetSpendableCollateralRequest) -> ::grpc::SingleResponse<super::bc::GetOpenOrdersResponse> {
         self.grpc_client.call_unary(o, p, self.method_GetOpenOrders.clone())
     }
 
-    fn get_matched_orders(&self, o: ::grpc::RequestOptions, p: super::bc::GetBalanceRequest) -> ::grpc::SingleResponse<super::bc::GetMatchedOrdersResponse> {
+    fn get_matched_orders(&self, o: ::grpc::RequestOptions, p: super::bc::GetSpendableCollateralRequest) -> ::grpc::SingleResponse<super::bc::GetMatchedOrdersResponse> {
         self.grpc_client.call_unary(o, p, self.method_GetMatchedOrders.clone())
     }
 
-    fn get_historical_orders(&self, o: ::grpc::RequestOptions, p: super::bc::GetHistoryRequest) -> ::grpc::SingleResponse<super::bc::GetMatchedOrdersResponse> {
+    fn get_historical_orders(&self, o: ::grpc::RequestOptions, p: super::bc::GetHistoryRequest) -> ::grpc::SingleResponse<super::bc::GetHistoricalOrdersResponse> {
         self.grpc_client.call_unary(o, p, self.method_GetHistoricalOrders.clone())
     }
 
@@ -604,6 +630,18 @@ impl BcServer {
                 ),
                 ::grpc::rt::ServerMethod::new(
                     ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
+                        name: "/bc.Bc/GetNrgSupply".to_string(),
+                        streaming: ::grpc::rt::GrpcStreaming::Unary,
+                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                    }),
+                    {
+                        let handler_copy = handler_arc.clone();
+                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.get_nrg_supply(o, p))
+                    },
+                ),
+                ::grpc::rt::ServerMethod::new(
+                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
                         name: "/bc.Bc/GetBlockHash".to_string(),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
                         req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
@@ -684,6 +722,18 @@ impl BcServer {
                     {
                         let handler_copy = handler_arc.clone();
                         ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.get_marked_tx(o, p))
+                    },
+                ),
+                ::grpc::rt::ServerMethod::new(
+                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
+                        name: "/bc.Bc/GetMarkedTxsForMatchedOrder".to_string(),
+                        streaming: ::grpc::rt::GrpcStreaming::Unary,
+                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                    }),
+                    {
+                        let handler_copy = handler_arc.clone();
+                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.get_marked_txs_for_matched_order(o, p))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(

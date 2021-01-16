@@ -1836,6 +1836,7 @@ impl ::protobuf::reflect::ProtobufValue for RoverMessage_Resync_Interval {
 pub struct SettleTxCheckReq {
     // message fields
     pub possible_transactions: ::protobuf::RepeatedField<SettleTxCheckReq_PossibleTransaction>,
+    pub block_hash: ::std::string::String,
     // special fields
     unknown_fields: ::protobuf::UnknownFields,
     cached_size: ::protobuf::CachedSize,
@@ -1870,6 +1871,32 @@ impl SettleTxCheckReq {
     pub fn get_possible_transactions(&self) -> &[SettleTxCheckReq_PossibleTransaction] {
         &self.possible_transactions
     }
+
+    // string block_hash = 2;
+
+    pub fn clear_block_hash(&mut self) {
+        self.block_hash.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_block_hash(&mut self, v: ::std::string::String) {
+        self.block_hash = v;
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_block_hash(&mut self) -> &mut ::std::string::String {
+        &mut self.block_hash
+    }
+
+    // Take field
+    pub fn take_block_hash(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.block_hash, ::std::string::String::new())
+    }
+
+    pub fn get_block_hash(&self) -> &str {
+        &self.block_hash
+    }
 }
 
 impl ::protobuf::Message for SettleTxCheckReq {
@@ -1889,6 +1916,9 @@ impl ::protobuf::Message for SettleTxCheckReq {
                 1 => {
                     ::protobuf::rt::read_repeated_message_into(wire_type, is, &mut self.possible_transactions)?;
                 },
+                2 => {
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.block_hash)?;
+                },
                 _ => {
                     ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
                 },
@@ -1905,6 +1935,9 @@ impl ::protobuf::Message for SettleTxCheckReq {
             let len = value.compute_size();
             my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
         };
+        if !self.block_hash.is_empty() {
+            my_size += ::protobuf::rt::string_size(2, &self.block_hash);
+        }
         my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
         self.cached_size.set(my_size);
         my_size
@@ -1916,6 +1949,9 @@ impl ::protobuf::Message for SettleTxCheckReq {
             os.write_raw_varint32(v.get_cached_size())?;
             v.write_to_with_cached_sizes(os)?;
         };
+        if !self.block_hash.is_empty() {
+            os.write_string(2, &self.block_hash)?;
+        }
         os.write_unknown_fields(self.get_unknown_fields())?;
         ::std::result::Result::Ok(())
     }
@@ -1963,6 +1999,11 @@ impl ::protobuf::Message for SettleTxCheckReq {
                     |m: &SettleTxCheckReq| { &m.possible_transactions },
                     |m: &mut SettleTxCheckReq| { &mut m.possible_transactions },
                 ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "block_hash",
+                    |m: &SettleTxCheckReq| { &m.block_hash },
+                    |m: &mut SettleTxCheckReq| { &mut m.block_hash },
+                ));
                 ::protobuf::reflect::MessageDescriptor::new::<SettleTxCheckReq>(
                     "SettleTxCheckReq",
                     fields,
@@ -1986,6 +2027,7 @@ impl ::protobuf::Message for SettleTxCheckReq {
 impl ::protobuf::Clear for SettleTxCheckReq {
     fn clear(&mut self) {
         self.clear_possible_transactions();
+        self.clear_block_hash();
         self.unknown_fields.clear();
     }
 }
@@ -2659,25 +2701,25 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     \t.bc.BlockR\x0blatestBlock\x12>\n\tintervals\x18\x02\x20\x03(\x0b2\x20.\
     bc.RoverMessage.Resync.IntervalR\tintervals\x1aZ\n\x08Interval\x12(\n\nf\
     rom_block\x18\x01\x20\x01(\x0b2\t.bc.BlockR\tfromBlock\x12$\n\x08to_bloc\
-    k\x18\x02\x20\x01(\x0b2\t.bc.BlockR\x07toBlockB\t\n\x07payload\"\xd1\x02\
+    k\x18\x02\x20\x01(\x0b2\t.bc.BlockR\x07toBlockB\t\n\x07payload\"\xf0\x02\
     \n\x10SettleTxCheckReq\x12]\n\x15possible_transactions\x18\x01\x20\x03(\
     \x0b2(.bc.SettleTxCheckReq.PossibleTransactionR\x14possibleTransactions\
-    \x1a\xdd\x01\n\x13PossibleTransaction\x12\x17\n\x07addr_to\x18\x01\x20\
-    \x01(\tR\x06addrTo\x12\x1b\n\taddr_from\x18\x02\x20\x01(\tR\x08addrFrom\
-    \x12\x14\n\x05value\x18\x03\x20\x01(\x0cR\x05value\x12#\n\rbridged_chain\
-    \x18\x04\x20\x01(\tR\x0cbridgedChain\x12\x13\n\x05tx_id\x18\x05\x20\x01(\
-    \tR\x04txId\x12!\n\x0cblock_height\x18\x06\x20\x01(\x04R\x0bblockHeight\
-    \x12\x1d\n\ntoken_type\x18\x07\x20\x01(\tR\ttokenType\"_\n\x15SettleTxCh\
-    eckResponse\x12F\n\x13marked_transactions\x18\x01\x20\x03(\x0b2\x15.bc.M\
-    arkedTransactionR\x12markedTransactions*L\n\x10RoverMessageType\x12\x0e\
-    \n\nFetchBlock\x10\0\x12\x11\n\rRequestResync\x10\x01\x12\x15\n\x11rover\
-    _block_range\x10\x022\xa0\x02\n\x05Rover\x12,\n\x04Join\x12\x0e.bc.Rover\
-    Ident\x1a\x10.bc.RoverMessage\"\00\x01\x12'\n\x0cCollectBlock\x12\t.bc.B\
-    lock\x1a\x08.bc.Null\"\0(\x01\x123\n\x10ReportSyncStatus\x12\x13.bc.Rove\
-    rSyncStatus\x1a\x08.bc.Null\"\0\x12@\n\x10ReportBlockRange\x12\x20.bc.Ro\
-    verMessage.RoverBlockRange\x1a\x08.bc.Null\"\0\x12I\n\x14IsBeforeSettleH\
-    eight\x12\x14.bc.SettleTxCheckReq\x1a\x19.bc.SettleTxCheckResponse\"\0b\
-    \x06proto3\
+    \x12\x1d\n\nblock_hash\x18\x02\x20\x01(\tR\tblockHash\x1a\xdd\x01\n\x13P\
+    ossibleTransaction\x12\x17\n\x07addr_to\x18\x01\x20\x01(\tR\x06addrTo\
+    \x12\x1b\n\taddr_from\x18\x02\x20\x01(\tR\x08addrFrom\x12\x14\n\x05value\
+    \x18\x03\x20\x01(\x0cR\x05value\x12#\n\rbridged_chain\x18\x04\x20\x01(\t\
+    R\x0cbridgedChain\x12\x13\n\x05tx_id\x18\x05\x20\x01(\tR\x04txId\x12!\n\
+    \x0cblock_height\x18\x06\x20\x01(\x04R\x0bblockHeight\x12\x1d\n\ntoken_t\
+    ype\x18\x07\x20\x01(\tR\ttokenType\"_\n\x15SettleTxCheckResponse\x12F\n\
+    \x13marked_transactions\x18\x01\x20\x03(\x0b2\x15.bc.MarkedTransactionR\
+    \x12markedTransactions*L\n\x10RoverMessageType\x12\x0e\n\nFetchBlock\x10\
+    \0\x12\x11\n\rRequestResync\x10\x01\x12\x15\n\x11rover_block_range\x10\
+    \x022\xa0\x02\n\x05Rover\x12,\n\x04Join\x12\x0e.bc.RoverIdent\x1a\x10.bc\
+    .RoverMessage\"\00\x01\x12'\n\x0cCollectBlock\x12\t.bc.Block\x1a\x08.bc.\
+    Null\"\0(\x01\x123\n\x10ReportSyncStatus\x12\x13.bc.RoverSyncStatus\x1a\
+    \x08.bc.Null\"\0\x12@\n\x10ReportBlockRange\x12\x20.bc.RoverMessage.Rove\
+    rBlockRange\x1a\x08.bc.Null\"\0\x12I\n\x14IsBeforeSettleHeight\x12\x14.b\
+    c.SettleTxCheckReq\x1a\x19.bc.SettleTxCheckResponse\"\0b\x06proto3\
 ";
 
 static mut file_descriptor_proto_lazy: ::protobuf::lazy::Lazy<::protobuf::descriptor::FileDescriptorProto> = ::protobuf::lazy::Lazy {

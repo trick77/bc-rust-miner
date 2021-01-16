@@ -1394,6 +1394,332 @@ impl ::protobuf::reflect::ProtobufValue for BlockchainHeaders {
 }
 
 #[derive(PartialEq,Clone,Default)]
+pub struct BlockchainHeaderRefs {
+    // message fields
+    pub btc_ref: ::protobuf::RepeatedField<::std::string::String>,
+    pub eth_ref: ::protobuf::RepeatedField<::std::string::String>,
+    pub lsk_ref: ::protobuf::RepeatedField<::std::string::String>,
+    pub neo_ref: ::protobuf::RepeatedField<::std::string::String>,
+    pub wav_ref: ::protobuf::RepeatedField<::std::string::String>,
+    // special fields
+    unknown_fields: ::protobuf::UnknownFields,
+    cached_size: ::protobuf::CachedSize,
+}
+
+impl BlockchainHeaderRefs {
+    pub fn new() -> BlockchainHeaderRefs {
+        ::std::default::Default::default()
+    }
+
+    // repeated string btc_ref = 1;
+
+    pub fn clear_btc_ref(&mut self) {
+        self.btc_ref.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_btc_ref(&mut self, v: ::protobuf::RepeatedField<::std::string::String>) {
+        self.btc_ref = v;
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_btc_ref(&mut self) -> &mut ::protobuf::RepeatedField<::std::string::String> {
+        &mut self.btc_ref
+    }
+
+    // Take field
+    pub fn take_btc_ref(&mut self) -> ::protobuf::RepeatedField<::std::string::String> {
+        ::std::mem::replace(&mut self.btc_ref, ::protobuf::RepeatedField::new())
+    }
+
+    pub fn get_btc_ref(&self) -> &[::std::string::String] {
+        &self.btc_ref
+    }
+
+    // repeated string eth_ref = 2;
+
+    pub fn clear_eth_ref(&mut self) {
+        self.eth_ref.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_eth_ref(&mut self, v: ::protobuf::RepeatedField<::std::string::String>) {
+        self.eth_ref = v;
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_eth_ref(&mut self) -> &mut ::protobuf::RepeatedField<::std::string::String> {
+        &mut self.eth_ref
+    }
+
+    // Take field
+    pub fn take_eth_ref(&mut self) -> ::protobuf::RepeatedField<::std::string::String> {
+        ::std::mem::replace(&mut self.eth_ref, ::protobuf::RepeatedField::new())
+    }
+
+    pub fn get_eth_ref(&self) -> &[::std::string::String] {
+        &self.eth_ref
+    }
+
+    // repeated string lsk_ref = 3;
+
+    pub fn clear_lsk_ref(&mut self) {
+        self.lsk_ref.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_lsk_ref(&mut self, v: ::protobuf::RepeatedField<::std::string::String>) {
+        self.lsk_ref = v;
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_lsk_ref(&mut self) -> &mut ::protobuf::RepeatedField<::std::string::String> {
+        &mut self.lsk_ref
+    }
+
+    // Take field
+    pub fn take_lsk_ref(&mut self) -> ::protobuf::RepeatedField<::std::string::String> {
+        ::std::mem::replace(&mut self.lsk_ref, ::protobuf::RepeatedField::new())
+    }
+
+    pub fn get_lsk_ref(&self) -> &[::std::string::String] {
+        &self.lsk_ref
+    }
+
+    // repeated string neo_ref = 4;
+
+    pub fn clear_neo_ref(&mut self) {
+        self.neo_ref.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_neo_ref(&mut self, v: ::protobuf::RepeatedField<::std::string::String>) {
+        self.neo_ref = v;
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_neo_ref(&mut self) -> &mut ::protobuf::RepeatedField<::std::string::String> {
+        &mut self.neo_ref
+    }
+
+    // Take field
+    pub fn take_neo_ref(&mut self) -> ::protobuf::RepeatedField<::std::string::String> {
+        ::std::mem::replace(&mut self.neo_ref, ::protobuf::RepeatedField::new())
+    }
+
+    pub fn get_neo_ref(&self) -> &[::std::string::String] {
+        &self.neo_ref
+    }
+
+    // repeated string wav_ref = 5;
+
+    pub fn clear_wav_ref(&mut self) {
+        self.wav_ref.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_wav_ref(&mut self, v: ::protobuf::RepeatedField<::std::string::String>) {
+        self.wav_ref = v;
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_wav_ref(&mut self) -> &mut ::protobuf::RepeatedField<::std::string::String> {
+        &mut self.wav_ref
+    }
+
+    // Take field
+    pub fn take_wav_ref(&mut self) -> ::protobuf::RepeatedField<::std::string::String> {
+        ::std::mem::replace(&mut self.wav_ref, ::protobuf::RepeatedField::new())
+    }
+
+    pub fn get_wav_ref(&self) -> &[::std::string::String] {
+        &self.wav_ref
+    }
+}
+
+impl ::protobuf::Message for BlockchainHeaderRefs {
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream) -> ::protobuf::ProtobufResult<()> {
+        while !is.eof()? {
+            let (field_number, wire_type) = is.read_tag_unpack()?;
+            match field_number {
+                1 => {
+                    ::protobuf::rt::read_repeated_string_into(wire_type, is, &mut self.btc_ref)?;
+                },
+                2 => {
+                    ::protobuf::rt::read_repeated_string_into(wire_type, is, &mut self.eth_ref)?;
+                },
+                3 => {
+                    ::protobuf::rt::read_repeated_string_into(wire_type, is, &mut self.lsk_ref)?;
+                },
+                4 => {
+                    ::protobuf::rt::read_repeated_string_into(wire_type, is, &mut self.neo_ref)?;
+                },
+                5 => {
+                    ::protobuf::rt::read_repeated_string_into(wire_type, is, &mut self.wav_ref)?;
+                },
+                _ => {
+                    ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u32 {
+        let mut my_size = 0;
+        for value in &self.btc_ref {
+            my_size += ::protobuf::rt::string_size(1, &value);
+        };
+        for value in &self.eth_ref {
+            my_size += ::protobuf::rt::string_size(2, &value);
+        };
+        for value in &self.lsk_ref {
+            my_size += ::protobuf::rt::string_size(3, &value);
+        };
+        for value in &self.neo_ref {
+            my_size += ::protobuf::rt::string_size(4, &value);
+        };
+        for value in &self.wav_ref {
+            my_size += ::protobuf::rt::string_size(5, &value);
+        };
+        my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
+        self.cached_size.set(my_size);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream) -> ::protobuf::ProtobufResult<()> {
+        for v in &self.btc_ref {
+            os.write_string(1, &v)?;
+        };
+        for v in &self.eth_ref {
+            os.write_string(2, &v)?;
+        };
+        for v in &self.lsk_ref {
+            os.write_string(3, &v)?;
+        };
+        for v in &self.neo_ref {
+            os.write_string(4, &v)?;
+        };
+        for v in &self.wav_ref {
+            os.write_string(5, &v)?;
+        };
+        os.write_unknown_fields(self.get_unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn get_cached_size(&self) -> u32 {
+        self.cached_size.get()
+    }
+
+    fn get_unknown_fields(&self) -> &::protobuf::UnknownFields {
+        &self.unknown_fields
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        &mut self.unknown_fields
+    }
+
+    fn as_any(&self) -> &::std::any::Any {
+        self as &::std::any::Any
+    }
+    fn as_any_mut(&mut self) -> &mut ::std::any::Any {
+        self as &mut ::std::any::Any
+    }
+    fn into_any(self: Box<Self>) -> ::std::boxed::Box<::std::any::Any> {
+        self
+    }
+
+    fn descriptor(&self) -> &'static ::protobuf::reflect::MessageDescriptor {
+        Self::descriptor_static()
+    }
+
+    fn new() -> BlockchainHeaderRefs {
+        BlockchainHeaderRefs::new()
+    }
+
+    fn descriptor_static() -> &'static ::protobuf::reflect::MessageDescriptor {
+        static mut descriptor: ::protobuf::lazy::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const ::protobuf::reflect::MessageDescriptor,
+        };
+        unsafe {
+            descriptor.get(|| {
+                let mut fields = ::std::vec::Vec::new();
+                fields.push(::protobuf::reflect::accessor::make_repeated_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "btc_ref",
+                    |m: &BlockchainHeaderRefs| { &m.btc_ref },
+                    |m: &mut BlockchainHeaderRefs| { &mut m.btc_ref },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_repeated_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "eth_ref",
+                    |m: &BlockchainHeaderRefs| { &m.eth_ref },
+                    |m: &mut BlockchainHeaderRefs| { &mut m.eth_ref },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_repeated_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "lsk_ref",
+                    |m: &BlockchainHeaderRefs| { &m.lsk_ref },
+                    |m: &mut BlockchainHeaderRefs| { &mut m.lsk_ref },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_repeated_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "neo_ref",
+                    |m: &BlockchainHeaderRefs| { &m.neo_ref },
+                    |m: &mut BlockchainHeaderRefs| { &mut m.neo_ref },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_repeated_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "wav_ref",
+                    |m: &BlockchainHeaderRefs| { &m.wav_ref },
+                    |m: &mut BlockchainHeaderRefs| { &mut m.wav_ref },
+                ));
+                ::protobuf::reflect::MessageDescriptor::new::<BlockchainHeaderRefs>(
+                    "BlockchainHeaderRefs",
+                    fields,
+                    file_descriptor_proto()
+                )
+            })
+        }
+    }
+
+    fn default_instance() -> &'static BlockchainHeaderRefs {
+        static mut instance: ::protobuf::lazy::Lazy<BlockchainHeaderRefs> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const BlockchainHeaderRefs,
+        };
+        unsafe {
+            instance.get(BlockchainHeaderRefs::new)
+        }
+    }
+}
+
+impl ::protobuf::Clear for BlockchainHeaderRefs {
+    fn clear(&mut self) {
+        self.clear_btc_ref();
+        self.clear_eth_ref();
+        self.clear_lsk_ref();
+        self.clear_neo_ref();
+        self.clear_wav_ref();
+        self.unknown_fields.clear();
+    }
+}
+
+impl ::std::fmt::Debug for BlockchainHeaderRefs {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for BlockchainHeaderRefs {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+        ::protobuf::reflect::ProtobufValueRef::Message(self)
+    }
+}
+
+#[derive(PartialEq,Clone,Default)]
 pub struct BcBlock {
     // message fields
     pub hash: ::std::string::String,
@@ -2545,6 +2871,1163 @@ impl ::std::fmt::Debug for BcBlock {
 }
 
 impl ::protobuf::reflect::ProtobufValue for BcBlock {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+        ::protobuf::reflect::ProtobufValueRef::Message(self)
+    }
+}
+
+#[derive(PartialEq,Clone,Default)]
+pub struct BcBlockRef {
+    // message fields
+    pub hash: ::std::string::String,
+    pub previous_hash: ::std::string::String,
+    pub version: u64,
+    pub schema_version: u64,
+    pub height: u64,
+    pub miner: ::std::string::String,
+    pub difficulty: ::std::string::String,
+    pub timestamp: u64,
+    pub merkle_root: ::std::string::String,
+    pub chain_root: ::std::string::String,
+    pub distance: ::std::string::String,
+    pub total_distance: ::std::string::String,
+    pub nonce: ::std::string::String,
+    pub nrg_grant: u64,
+    pub twn: u64,
+    pub tws: ::protobuf::RepeatedField<::std::string::String>,
+    pub emblem_weight: u64,
+    pub emblem_chain_fingerprint_root: ::std::string::String,
+    pub emblem_chain_address: ::std::string::String,
+    pub tx_count: u64,
+    pub txs: ::protobuf::RepeatedField<Transaction>,
+    pub tx_fee_base: u64,
+    pub tx_distance_sum_limit: u64,
+    pub blockchain_headers_count: u64,
+    pub blockchain_header_refs: ::protobuf::SingularPtrField<BlockchainHeaderRefs>,
+    pub blockchain_fingerprints_root: ::std::string::String,
+    // special fields
+    unknown_fields: ::protobuf::UnknownFields,
+    cached_size: ::protobuf::CachedSize,
+}
+
+impl BcBlockRef {
+    pub fn new() -> BcBlockRef {
+        ::std::default::Default::default()
+    }
+
+    // string hash = 1;
+
+    pub fn clear_hash(&mut self) {
+        self.hash.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_hash(&mut self, v: ::std::string::String) {
+        self.hash = v;
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_hash(&mut self) -> &mut ::std::string::String {
+        &mut self.hash
+    }
+
+    // Take field
+    pub fn take_hash(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.hash, ::std::string::String::new())
+    }
+
+    pub fn get_hash(&self) -> &str {
+        &self.hash
+    }
+
+    // string previous_hash = 2;
+
+    pub fn clear_previous_hash(&mut self) {
+        self.previous_hash.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_previous_hash(&mut self, v: ::std::string::String) {
+        self.previous_hash = v;
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_previous_hash(&mut self) -> &mut ::std::string::String {
+        &mut self.previous_hash
+    }
+
+    // Take field
+    pub fn take_previous_hash(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.previous_hash, ::std::string::String::new())
+    }
+
+    pub fn get_previous_hash(&self) -> &str {
+        &self.previous_hash
+    }
+
+    // uint64 version = 3;
+
+    pub fn clear_version(&mut self) {
+        self.version = 0;
+    }
+
+    // Param is passed by value, moved
+    pub fn set_version(&mut self, v: u64) {
+        self.version = v;
+    }
+
+    pub fn get_version(&self) -> u64 {
+        self.version
+    }
+
+    // uint64 schema_version = 4;
+
+    pub fn clear_schema_version(&mut self) {
+        self.schema_version = 0;
+    }
+
+    // Param is passed by value, moved
+    pub fn set_schema_version(&mut self, v: u64) {
+        self.schema_version = v;
+    }
+
+    pub fn get_schema_version(&self) -> u64 {
+        self.schema_version
+    }
+
+    // uint64 height = 5;
+
+    pub fn clear_height(&mut self) {
+        self.height = 0;
+    }
+
+    // Param is passed by value, moved
+    pub fn set_height(&mut self, v: u64) {
+        self.height = v;
+    }
+
+    pub fn get_height(&self) -> u64 {
+        self.height
+    }
+
+    // string miner = 6;
+
+    pub fn clear_miner(&mut self) {
+        self.miner.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_miner(&mut self, v: ::std::string::String) {
+        self.miner = v;
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_miner(&mut self) -> &mut ::std::string::String {
+        &mut self.miner
+    }
+
+    // Take field
+    pub fn take_miner(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.miner, ::std::string::String::new())
+    }
+
+    pub fn get_miner(&self) -> &str {
+        &self.miner
+    }
+
+    // string difficulty = 7;
+
+    pub fn clear_difficulty(&mut self) {
+        self.difficulty.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_difficulty(&mut self, v: ::std::string::String) {
+        self.difficulty = v;
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_difficulty(&mut self) -> &mut ::std::string::String {
+        &mut self.difficulty
+    }
+
+    // Take field
+    pub fn take_difficulty(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.difficulty, ::std::string::String::new())
+    }
+
+    pub fn get_difficulty(&self) -> &str {
+        &self.difficulty
+    }
+
+    // uint64 timestamp = 8;
+
+    pub fn clear_timestamp(&mut self) {
+        self.timestamp = 0;
+    }
+
+    // Param is passed by value, moved
+    pub fn set_timestamp(&mut self, v: u64) {
+        self.timestamp = v;
+    }
+
+    pub fn get_timestamp(&self) -> u64 {
+        self.timestamp
+    }
+
+    // string merkle_root = 9;
+
+    pub fn clear_merkle_root(&mut self) {
+        self.merkle_root.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_merkle_root(&mut self, v: ::std::string::String) {
+        self.merkle_root = v;
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_merkle_root(&mut self) -> &mut ::std::string::String {
+        &mut self.merkle_root
+    }
+
+    // Take field
+    pub fn take_merkle_root(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.merkle_root, ::std::string::String::new())
+    }
+
+    pub fn get_merkle_root(&self) -> &str {
+        &self.merkle_root
+    }
+
+    // string chain_root = 10;
+
+    pub fn clear_chain_root(&mut self) {
+        self.chain_root.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_chain_root(&mut self, v: ::std::string::String) {
+        self.chain_root = v;
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_chain_root(&mut self) -> &mut ::std::string::String {
+        &mut self.chain_root
+    }
+
+    // Take field
+    pub fn take_chain_root(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.chain_root, ::std::string::String::new())
+    }
+
+    pub fn get_chain_root(&self) -> &str {
+        &self.chain_root
+    }
+
+    // string distance = 11;
+
+    pub fn clear_distance(&mut self) {
+        self.distance.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_distance(&mut self, v: ::std::string::String) {
+        self.distance = v;
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_distance(&mut self) -> &mut ::std::string::String {
+        &mut self.distance
+    }
+
+    // Take field
+    pub fn take_distance(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.distance, ::std::string::String::new())
+    }
+
+    pub fn get_distance(&self) -> &str {
+        &self.distance
+    }
+
+    // string total_distance = 12;
+
+    pub fn clear_total_distance(&mut self) {
+        self.total_distance.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_total_distance(&mut self, v: ::std::string::String) {
+        self.total_distance = v;
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_total_distance(&mut self) -> &mut ::std::string::String {
+        &mut self.total_distance
+    }
+
+    // Take field
+    pub fn take_total_distance(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.total_distance, ::std::string::String::new())
+    }
+
+    pub fn get_total_distance(&self) -> &str {
+        &self.total_distance
+    }
+
+    // string nonce = 13;
+
+    pub fn clear_nonce(&mut self) {
+        self.nonce.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_nonce(&mut self, v: ::std::string::String) {
+        self.nonce = v;
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_nonce(&mut self) -> &mut ::std::string::String {
+        &mut self.nonce
+    }
+
+    // Take field
+    pub fn take_nonce(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.nonce, ::std::string::String::new())
+    }
+
+    pub fn get_nonce(&self) -> &str {
+        &self.nonce
+    }
+
+    // uint64 nrg_grant = 14;
+
+    pub fn clear_nrg_grant(&mut self) {
+        self.nrg_grant = 0;
+    }
+
+    // Param is passed by value, moved
+    pub fn set_nrg_grant(&mut self, v: u64) {
+        self.nrg_grant = v;
+    }
+
+    pub fn get_nrg_grant(&self) -> u64 {
+        self.nrg_grant
+    }
+
+    // uint64 twn = 15;
+
+    pub fn clear_twn(&mut self) {
+        self.twn = 0;
+    }
+
+    // Param is passed by value, moved
+    pub fn set_twn(&mut self, v: u64) {
+        self.twn = v;
+    }
+
+    pub fn get_twn(&self) -> u64 {
+        self.twn
+    }
+
+    // repeated string tws = 16;
+
+    pub fn clear_tws(&mut self) {
+        self.tws.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_tws(&mut self, v: ::protobuf::RepeatedField<::std::string::String>) {
+        self.tws = v;
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_tws(&mut self) -> &mut ::protobuf::RepeatedField<::std::string::String> {
+        &mut self.tws
+    }
+
+    // Take field
+    pub fn take_tws(&mut self) -> ::protobuf::RepeatedField<::std::string::String> {
+        ::std::mem::replace(&mut self.tws, ::protobuf::RepeatedField::new())
+    }
+
+    pub fn get_tws(&self) -> &[::std::string::String] {
+        &self.tws
+    }
+
+    // uint64 emblem_weight = 17;
+
+    pub fn clear_emblem_weight(&mut self) {
+        self.emblem_weight = 0;
+    }
+
+    // Param is passed by value, moved
+    pub fn set_emblem_weight(&mut self, v: u64) {
+        self.emblem_weight = v;
+    }
+
+    pub fn get_emblem_weight(&self) -> u64 {
+        self.emblem_weight
+    }
+
+    // string emblem_chain_fingerprint_root = 18;
+
+    pub fn clear_emblem_chain_fingerprint_root(&mut self) {
+        self.emblem_chain_fingerprint_root.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_emblem_chain_fingerprint_root(&mut self, v: ::std::string::String) {
+        self.emblem_chain_fingerprint_root = v;
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_emblem_chain_fingerprint_root(&mut self) -> &mut ::std::string::String {
+        &mut self.emblem_chain_fingerprint_root
+    }
+
+    // Take field
+    pub fn take_emblem_chain_fingerprint_root(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.emblem_chain_fingerprint_root, ::std::string::String::new())
+    }
+
+    pub fn get_emblem_chain_fingerprint_root(&self) -> &str {
+        &self.emblem_chain_fingerprint_root
+    }
+
+    // string emblem_chain_address = 19;
+
+    pub fn clear_emblem_chain_address(&mut self) {
+        self.emblem_chain_address.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_emblem_chain_address(&mut self, v: ::std::string::String) {
+        self.emblem_chain_address = v;
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_emblem_chain_address(&mut self) -> &mut ::std::string::String {
+        &mut self.emblem_chain_address
+    }
+
+    // Take field
+    pub fn take_emblem_chain_address(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.emblem_chain_address, ::std::string::String::new())
+    }
+
+    pub fn get_emblem_chain_address(&self) -> &str {
+        &self.emblem_chain_address
+    }
+
+    // uint64 tx_count = 20;
+
+    pub fn clear_tx_count(&mut self) {
+        self.tx_count = 0;
+    }
+
+    // Param is passed by value, moved
+    pub fn set_tx_count(&mut self, v: u64) {
+        self.tx_count = v;
+    }
+
+    pub fn get_tx_count(&self) -> u64 {
+        self.tx_count
+    }
+
+    // repeated .bc.Transaction txs = 21;
+
+    pub fn clear_txs(&mut self) {
+        self.txs.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_txs(&mut self, v: ::protobuf::RepeatedField<Transaction>) {
+        self.txs = v;
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_txs(&mut self) -> &mut ::protobuf::RepeatedField<Transaction> {
+        &mut self.txs
+    }
+
+    // Take field
+    pub fn take_txs(&mut self) -> ::protobuf::RepeatedField<Transaction> {
+        ::std::mem::replace(&mut self.txs, ::protobuf::RepeatedField::new())
+    }
+
+    pub fn get_txs(&self) -> &[Transaction] {
+        &self.txs
+    }
+
+    // uint64 tx_fee_base = 22;
+
+    pub fn clear_tx_fee_base(&mut self) {
+        self.tx_fee_base = 0;
+    }
+
+    // Param is passed by value, moved
+    pub fn set_tx_fee_base(&mut self, v: u64) {
+        self.tx_fee_base = v;
+    }
+
+    pub fn get_tx_fee_base(&self) -> u64 {
+        self.tx_fee_base
+    }
+
+    // uint64 tx_distance_sum_limit = 23;
+
+    pub fn clear_tx_distance_sum_limit(&mut self) {
+        self.tx_distance_sum_limit = 0;
+    }
+
+    // Param is passed by value, moved
+    pub fn set_tx_distance_sum_limit(&mut self, v: u64) {
+        self.tx_distance_sum_limit = v;
+    }
+
+    pub fn get_tx_distance_sum_limit(&self) -> u64 {
+        self.tx_distance_sum_limit
+    }
+
+    // uint64 blockchain_headers_count = 24;
+
+    pub fn clear_blockchain_headers_count(&mut self) {
+        self.blockchain_headers_count = 0;
+    }
+
+    // Param is passed by value, moved
+    pub fn set_blockchain_headers_count(&mut self, v: u64) {
+        self.blockchain_headers_count = v;
+    }
+
+    pub fn get_blockchain_headers_count(&self) -> u64 {
+        self.blockchain_headers_count
+    }
+
+    // .bc.BlockchainHeaderRefs blockchain_header_refs = 25;
+
+    pub fn clear_blockchain_header_refs(&mut self) {
+        self.blockchain_header_refs.clear();
+    }
+
+    pub fn has_blockchain_header_refs(&self) -> bool {
+        self.blockchain_header_refs.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_blockchain_header_refs(&mut self, v: BlockchainHeaderRefs) {
+        self.blockchain_header_refs = ::protobuf::SingularPtrField::some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_blockchain_header_refs(&mut self) -> &mut BlockchainHeaderRefs {
+        if self.blockchain_header_refs.is_none() {
+            self.blockchain_header_refs.set_default();
+        }
+        self.blockchain_header_refs.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_blockchain_header_refs(&mut self) -> BlockchainHeaderRefs {
+        self.blockchain_header_refs.take().unwrap_or_else(|| BlockchainHeaderRefs::new())
+    }
+
+    pub fn get_blockchain_header_refs(&self) -> &BlockchainHeaderRefs {
+        self.blockchain_header_refs.as_ref().unwrap_or_else(|| BlockchainHeaderRefs::default_instance())
+    }
+
+    // string blockchain_fingerprints_root = 26;
+
+    pub fn clear_blockchain_fingerprints_root(&mut self) {
+        self.blockchain_fingerprints_root.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_blockchain_fingerprints_root(&mut self, v: ::std::string::String) {
+        self.blockchain_fingerprints_root = v;
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_blockchain_fingerprints_root(&mut self) -> &mut ::std::string::String {
+        &mut self.blockchain_fingerprints_root
+    }
+
+    // Take field
+    pub fn take_blockchain_fingerprints_root(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.blockchain_fingerprints_root, ::std::string::String::new())
+    }
+
+    pub fn get_blockchain_fingerprints_root(&self) -> &str {
+        &self.blockchain_fingerprints_root
+    }
+}
+
+impl ::protobuf::Message for BcBlockRef {
+    fn is_initialized(&self) -> bool {
+        for v in &self.txs {
+            if !v.is_initialized() {
+                return false;
+            }
+        };
+        for v in &self.blockchain_header_refs {
+            if !v.is_initialized() {
+                return false;
+            }
+        };
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream) -> ::protobuf::ProtobufResult<()> {
+        while !is.eof()? {
+            let (field_number, wire_type) = is.read_tag_unpack()?;
+            match field_number {
+                1 => {
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.hash)?;
+                },
+                2 => {
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.previous_hash)?;
+                },
+                3 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeVarint {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    let tmp = is.read_uint64()?;
+                    self.version = tmp;
+                },
+                4 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeVarint {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    let tmp = is.read_uint64()?;
+                    self.schema_version = tmp;
+                },
+                5 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeVarint {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    let tmp = is.read_uint64()?;
+                    self.height = tmp;
+                },
+                6 => {
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.miner)?;
+                },
+                7 => {
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.difficulty)?;
+                },
+                8 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeVarint {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    let tmp = is.read_uint64()?;
+                    self.timestamp = tmp;
+                },
+                9 => {
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.merkle_root)?;
+                },
+                10 => {
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.chain_root)?;
+                },
+                11 => {
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.distance)?;
+                },
+                12 => {
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.total_distance)?;
+                },
+                13 => {
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.nonce)?;
+                },
+                14 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeVarint {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    let tmp = is.read_uint64()?;
+                    self.nrg_grant = tmp;
+                },
+                15 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeVarint {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    let tmp = is.read_uint64()?;
+                    self.twn = tmp;
+                },
+                16 => {
+                    ::protobuf::rt::read_repeated_string_into(wire_type, is, &mut self.tws)?;
+                },
+                17 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeVarint {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    let tmp = is.read_uint64()?;
+                    self.emblem_weight = tmp;
+                },
+                18 => {
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.emblem_chain_fingerprint_root)?;
+                },
+                19 => {
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.emblem_chain_address)?;
+                },
+                20 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeVarint {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    let tmp = is.read_uint64()?;
+                    self.tx_count = tmp;
+                },
+                21 => {
+                    ::protobuf::rt::read_repeated_message_into(wire_type, is, &mut self.txs)?;
+                },
+                22 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeVarint {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    let tmp = is.read_uint64()?;
+                    self.tx_fee_base = tmp;
+                },
+                23 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeVarint {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    let tmp = is.read_uint64()?;
+                    self.tx_distance_sum_limit = tmp;
+                },
+                24 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeVarint {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    let tmp = is.read_uint64()?;
+                    self.blockchain_headers_count = tmp;
+                },
+                25 => {
+                    ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.blockchain_header_refs)?;
+                },
+                26 => {
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.blockchain_fingerprints_root)?;
+                },
+                _ => {
+                    ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u32 {
+        let mut my_size = 0;
+        if !self.hash.is_empty() {
+            my_size += ::protobuf::rt::string_size(1, &self.hash);
+        }
+        if !self.previous_hash.is_empty() {
+            my_size += ::protobuf::rt::string_size(2, &self.previous_hash);
+        }
+        if self.version != 0 {
+            my_size += ::protobuf::rt::value_size(3, self.version, ::protobuf::wire_format::WireTypeVarint);
+        }
+        if self.schema_version != 0 {
+            my_size += ::protobuf::rt::value_size(4, self.schema_version, ::protobuf::wire_format::WireTypeVarint);
+        }
+        if self.height != 0 {
+            my_size += ::protobuf::rt::value_size(5, self.height, ::protobuf::wire_format::WireTypeVarint);
+        }
+        if !self.miner.is_empty() {
+            my_size += ::protobuf::rt::string_size(6, &self.miner);
+        }
+        if !self.difficulty.is_empty() {
+            my_size += ::protobuf::rt::string_size(7, &self.difficulty);
+        }
+        if self.timestamp != 0 {
+            my_size += ::protobuf::rt::value_size(8, self.timestamp, ::protobuf::wire_format::WireTypeVarint);
+        }
+        if !self.merkle_root.is_empty() {
+            my_size += ::protobuf::rt::string_size(9, &self.merkle_root);
+        }
+        if !self.chain_root.is_empty() {
+            my_size += ::protobuf::rt::string_size(10, &self.chain_root);
+        }
+        if !self.distance.is_empty() {
+            my_size += ::protobuf::rt::string_size(11, &self.distance);
+        }
+        if !self.total_distance.is_empty() {
+            my_size += ::protobuf::rt::string_size(12, &self.total_distance);
+        }
+        if !self.nonce.is_empty() {
+            my_size += ::protobuf::rt::string_size(13, &self.nonce);
+        }
+        if self.nrg_grant != 0 {
+            my_size += ::protobuf::rt::value_size(14, self.nrg_grant, ::protobuf::wire_format::WireTypeVarint);
+        }
+        if self.twn != 0 {
+            my_size += ::protobuf::rt::value_size(15, self.twn, ::protobuf::wire_format::WireTypeVarint);
+        }
+        for value in &self.tws {
+            my_size += ::protobuf::rt::string_size(16, &value);
+        };
+        if self.emblem_weight != 0 {
+            my_size += ::protobuf::rt::value_size(17, self.emblem_weight, ::protobuf::wire_format::WireTypeVarint);
+        }
+        if !self.emblem_chain_fingerprint_root.is_empty() {
+            my_size += ::protobuf::rt::string_size(18, &self.emblem_chain_fingerprint_root);
+        }
+        if !self.emblem_chain_address.is_empty() {
+            my_size += ::protobuf::rt::string_size(19, &self.emblem_chain_address);
+        }
+        if self.tx_count != 0 {
+            my_size += ::protobuf::rt::value_size(20, self.tx_count, ::protobuf::wire_format::WireTypeVarint);
+        }
+        for value in &self.txs {
+            let len = value.compute_size();
+            my_size += 2 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+        };
+        if self.tx_fee_base != 0 {
+            my_size += ::protobuf::rt::value_size(22, self.tx_fee_base, ::protobuf::wire_format::WireTypeVarint);
+        }
+        if self.tx_distance_sum_limit != 0 {
+            my_size += ::protobuf::rt::value_size(23, self.tx_distance_sum_limit, ::protobuf::wire_format::WireTypeVarint);
+        }
+        if self.blockchain_headers_count != 0 {
+            my_size += ::protobuf::rt::value_size(24, self.blockchain_headers_count, ::protobuf::wire_format::WireTypeVarint);
+        }
+        if let Some(ref v) = self.blockchain_header_refs.as_ref() {
+            let len = v.compute_size();
+            my_size += 2 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+        }
+        if !self.blockchain_fingerprints_root.is_empty() {
+            my_size += ::protobuf::rt::string_size(26, &self.blockchain_fingerprints_root);
+        }
+        my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
+        self.cached_size.set(my_size);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream) -> ::protobuf::ProtobufResult<()> {
+        if !self.hash.is_empty() {
+            os.write_string(1, &self.hash)?;
+        }
+        if !self.previous_hash.is_empty() {
+            os.write_string(2, &self.previous_hash)?;
+        }
+        if self.version != 0 {
+            os.write_uint64(3, self.version)?;
+        }
+        if self.schema_version != 0 {
+            os.write_uint64(4, self.schema_version)?;
+        }
+        if self.height != 0 {
+            os.write_uint64(5, self.height)?;
+        }
+        if !self.miner.is_empty() {
+            os.write_string(6, &self.miner)?;
+        }
+        if !self.difficulty.is_empty() {
+            os.write_string(7, &self.difficulty)?;
+        }
+        if self.timestamp != 0 {
+            os.write_uint64(8, self.timestamp)?;
+        }
+        if !self.merkle_root.is_empty() {
+            os.write_string(9, &self.merkle_root)?;
+        }
+        if !self.chain_root.is_empty() {
+            os.write_string(10, &self.chain_root)?;
+        }
+        if !self.distance.is_empty() {
+            os.write_string(11, &self.distance)?;
+        }
+        if !self.total_distance.is_empty() {
+            os.write_string(12, &self.total_distance)?;
+        }
+        if !self.nonce.is_empty() {
+            os.write_string(13, &self.nonce)?;
+        }
+        if self.nrg_grant != 0 {
+            os.write_uint64(14, self.nrg_grant)?;
+        }
+        if self.twn != 0 {
+            os.write_uint64(15, self.twn)?;
+        }
+        for v in &self.tws {
+            os.write_string(16, &v)?;
+        };
+        if self.emblem_weight != 0 {
+            os.write_uint64(17, self.emblem_weight)?;
+        }
+        if !self.emblem_chain_fingerprint_root.is_empty() {
+            os.write_string(18, &self.emblem_chain_fingerprint_root)?;
+        }
+        if !self.emblem_chain_address.is_empty() {
+            os.write_string(19, &self.emblem_chain_address)?;
+        }
+        if self.tx_count != 0 {
+            os.write_uint64(20, self.tx_count)?;
+        }
+        for v in &self.txs {
+            os.write_tag(21, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+            os.write_raw_varint32(v.get_cached_size())?;
+            v.write_to_with_cached_sizes(os)?;
+        };
+        if self.tx_fee_base != 0 {
+            os.write_uint64(22, self.tx_fee_base)?;
+        }
+        if self.tx_distance_sum_limit != 0 {
+            os.write_uint64(23, self.tx_distance_sum_limit)?;
+        }
+        if self.blockchain_headers_count != 0 {
+            os.write_uint64(24, self.blockchain_headers_count)?;
+        }
+        if let Some(ref v) = self.blockchain_header_refs.as_ref() {
+            os.write_tag(25, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+            os.write_raw_varint32(v.get_cached_size())?;
+            v.write_to_with_cached_sizes(os)?;
+        }
+        if !self.blockchain_fingerprints_root.is_empty() {
+            os.write_string(26, &self.blockchain_fingerprints_root)?;
+        }
+        os.write_unknown_fields(self.get_unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn get_cached_size(&self) -> u32 {
+        self.cached_size.get()
+    }
+
+    fn get_unknown_fields(&self) -> &::protobuf::UnknownFields {
+        &self.unknown_fields
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        &mut self.unknown_fields
+    }
+
+    fn as_any(&self) -> &::std::any::Any {
+        self as &::std::any::Any
+    }
+    fn as_any_mut(&mut self) -> &mut ::std::any::Any {
+        self as &mut ::std::any::Any
+    }
+    fn into_any(self: Box<Self>) -> ::std::boxed::Box<::std::any::Any> {
+        self
+    }
+
+    fn descriptor(&self) -> &'static ::protobuf::reflect::MessageDescriptor {
+        Self::descriptor_static()
+    }
+
+    fn new() -> BcBlockRef {
+        BcBlockRef::new()
+    }
+
+    fn descriptor_static() -> &'static ::protobuf::reflect::MessageDescriptor {
+        static mut descriptor: ::protobuf::lazy::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const ::protobuf::reflect::MessageDescriptor,
+        };
+        unsafe {
+            descriptor.get(|| {
+                let mut fields = ::std::vec::Vec::new();
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "hash",
+                    |m: &BcBlockRef| { &m.hash },
+                    |m: &mut BcBlockRef| { &mut m.hash },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "previous_hash",
+                    |m: &BcBlockRef| { &m.previous_hash },
+                    |m: &mut BcBlockRef| { &mut m.previous_hash },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeUint64>(
+                    "version",
+                    |m: &BcBlockRef| { &m.version },
+                    |m: &mut BcBlockRef| { &mut m.version },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeUint64>(
+                    "schema_version",
+                    |m: &BcBlockRef| { &m.schema_version },
+                    |m: &mut BcBlockRef| { &mut m.schema_version },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeUint64>(
+                    "height",
+                    |m: &BcBlockRef| { &m.height },
+                    |m: &mut BcBlockRef| { &mut m.height },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "miner",
+                    |m: &BcBlockRef| { &m.miner },
+                    |m: &mut BcBlockRef| { &mut m.miner },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "difficulty",
+                    |m: &BcBlockRef| { &m.difficulty },
+                    |m: &mut BcBlockRef| { &mut m.difficulty },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeUint64>(
+                    "timestamp",
+                    |m: &BcBlockRef| { &m.timestamp },
+                    |m: &mut BcBlockRef| { &mut m.timestamp },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "merkle_root",
+                    |m: &BcBlockRef| { &m.merkle_root },
+                    |m: &mut BcBlockRef| { &mut m.merkle_root },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "chain_root",
+                    |m: &BcBlockRef| { &m.chain_root },
+                    |m: &mut BcBlockRef| { &mut m.chain_root },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "distance",
+                    |m: &BcBlockRef| { &m.distance },
+                    |m: &mut BcBlockRef| { &mut m.distance },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "total_distance",
+                    |m: &BcBlockRef| { &m.total_distance },
+                    |m: &mut BcBlockRef| { &mut m.total_distance },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "nonce",
+                    |m: &BcBlockRef| { &m.nonce },
+                    |m: &mut BcBlockRef| { &mut m.nonce },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeUint64>(
+                    "nrg_grant",
+                    |m: &BcBlockRef| { &m.nrg_grant },
+                    |m: &mut BcBlockRef| { &mut m.nrg_grant },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeUint64>(
+                    "twn",
+                    |m: &BcBlockRef| { &m.twn },
+                    |m: &mut BcBlockRef| { &mut m.twn },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_repeated_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "tws",
+                    |m: &BcBlockRef| { &m.tws },
+                    |m: &mut BcBlockRef| { &mut m.tws },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeUint64>(
+                    "emblem_weight",
+                    |m: &BcBlockRef| { &m.emblem_weight },
+                    |m: &mut BcBlockRef| { &mut m.emblem_weight },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "emblem_chain_fingerprint_root",
+                    |m: &BcBlockRef| { &m.emblem_chain_fingerprint_root },
+                    |m: &mut BcBlockRef| { &mut m.emblem_chain_fingerprint_root },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "emblem_chain_address",
+                    |m: &BcBlockRef| { &m.emblem_chain_address },
+                    |m: &mut BcBlockRef| { &mut m.emblem_chain_address },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeUint64>(
+                    "tx_count",
+                    |m: &BcBlockRef| { &m.tx_count },
+                    |m: &mut BcBlockRef| { &mut m.tx_count },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_repeated_field_accessor::<_, ::protobuf::types::ProtobufTypeMessage<Transaction>>(
+                    "txs",
+                    |m: &BcBlockRef| { &m.txs },
+                    |m: &mut BcBlockRef| { &mut m.txs },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeUint64>(
+                    "tx_fee_base",
+                    |m: &BcBlockRef| { &m.tx_fee_base },
+                    |m: &mut BcBlockRef| { &mut m.tx_fee_base },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeUint64>(
+                    "tx_distance_sum_limit",
+                    |m: &BcBlockRef| { &m.tx_distance_sum_limit },
+                    |m: &mut BcBlockRef| { &mut m.tx_distance_sum_limit },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeUint64>(
+                    "blockchain_headers_count",
+                    |m: &BcBlockRef| { &m.blockchain_headers_count },
+                    |m: &mut BcBlockRef| { &mut m.blockchain_headers_count },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_ptr_field_accessor::<_, ::protobuf::types::ProtobufTypeMessage<BlockchainHeaderRefs>>(
+                    "blockchain_header_refs",
+                    |m: &BcBlockRef| { &m.blockchain_header_refs },
+                    |m: &mut BcBlockRef| { &mut m.blockchain_header_refs },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "blockchain_fingerprints_root",
+                    |m: &BcBlockRef| { &m.blockchain_fingerprints_root },
+                    |m: &mut BcBlockRef| { &mut m.blockchain_fingerprints_root },
+                ));
+                ::protobuf::reflect::MessageDescriptor::new::<BcBlockRef>(
+                    "BcBlockRef",
+                    fields,
+                    file_descriptor_proto()
+                )
+            })
+        }
+    }
+
+    fn default_instance() -> &'static BcBlockRef {
+        static mut instance: ::protobuf::lazy::Lazy<BcBlockRef> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const BcBlockRef,
+        };
+        unsafe {
+            instance.get(BcBlockRef::new)
+        }
+    }
+}
+
+impl ::protobuf::Clear for BcBlockRef {
+    fn clear(&mut self) {
+        self.clear_hash();
+        self.clear_previous_hash();
+        self.clear_version();
+        self.clear_schema_version();
+        self.clear_height();
+        self.clear_miner();
+        self.clear_difficulty();
+        self.clear_timestamp();
+        self.clear_merkle_root();
+        self.clear_chain_root();
+        self.clear_distance();
+        self.clear_total_distance();
+        self.clear_nonce();
+        self.clear_nrg_grant();
+        self.clear_twn();
+        self.clear_tws();
+        self.clear_emblem_weight();
+        self.clear_emblem_chain_fingerprint_root();
+        self.clear_emblem_chain_address();
+        self.clear_tx_count();
+        self.clear_txs();
+        self.clear_tx_fee_base();
+        self.clear_tx_distance_sum_limit();
+        self.clear_blockchain_headers_count();
+        self.clear_blockchain_header_refs();
+        self.clear_blockchain_fingerprints_root();
+        self.unknown_fields.clear();
+    }
+}
+
+impl ::std::fmt::Debug for BcBlockRef {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for BcBlockRef {
     fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
         ::protobuf::reflect::ProtobufValueRef::Message(self)
     }
@@ -5141,6 +6624,7 @@ pub struct BlockchainHeader {
     pub merkle_root: ::std::string::String,
     pub blockchain_confirmations_in_parent_count: u64,
     pub marked_txs: ::protobuf::RepeatedField<MarkedTransaction>,
+    pub marked_tx_count: u64,
     // special fields
     unknown_fields: ::protobuf::UnknownFields,
     cached_size: ::protobuf::CachedSize,
@@ -5324,6 +6808,21 @@ impl BlockchainHeader {
     pub fn get_marked_txs(&self) -> &[MarkedTransaction] {
         &self.marked_txs
     }
+
+    // uint64 marked_tx_count = 9;
+
+    pub fn clear_marked_tx_count(&mut self) {
+        self.marked_tx_count = 0;
+    }
+
+    // Param is passed by value, moved
+    pub fn set_marked_tx_count(&mut self, v: u64) {
+        self.marked_tx_count = v;
+    }
+
+    pub fn get_marked_tx_count(&self) -> u64 {
+        self.marked_tx_count
+    }
 }
 
 impl ::protobuf::Message for BlockchainHeader {
@@ -5376,6 +6875,13 @@ impl ::protobuf::Message for BlockchainHeader {
                 8 => {
                     ::protobuf::rt::read_repeated_message_into(wire_type, is, &mut self.marked_txs)?;
                 },
+                9 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeVarint {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    let tmp = is.read_uint64()?;
+                    self.marked_tx_count = tmp;
+                },
                 _ => {
                     ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
                 },
@@ -5413,6 +6919,9 @@ impl ::protobuf::Message for BlockchainHeader {
             let len = value.compute_size();
             my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
         };
+        if self.marked_tx_count != 0 {
+            my_size += ::protobuf::rt::value_size(9, self.marked_tx_count, ::protobuf::wire_format::WireTypeVarint);
+        }
         my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
         self.cached_size.set(my_size);
         my_size
@@ -5445,6 +6954,9 @@ impl ::protobuf::Message for BlockchainHeader {
             os.write_raw_varint32(v.get_cached_size())?;
             v.write_to_with_cached_sizes(os)?;
         };
+        if self.marked_tx_count != 0 {
+            os.write_uint64(9, self.marked_tx_count)?;
+        }
         os.write_unknown_fields(self.get_unknown_fields())?;
         ::std::result::Result::Ok(())
     }
@@ -5527,6 +7039,11 @@ impl ::protobuf::Message for BlockchainHeader {
                     |m: &BlockchainHeader| { &m.marked_txs },
                     |m: &mut BlockchainHeader| { &mut m.marked_txs },
                 ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeUint64>(
+                    "marked_tx_count",
+                    |m: &BlockchainHeader| { &m.marked_tx_count },
+                    |m: &mut BlockchainHeader| { &mut m.marked_tx_count },
+                ));
                 ::protobuf::reflect::MessageDescriptor::new::<BlockchainHeader>(
                     "BlockchainHeader",
                     fields,
@@ -5557,6 +7074,7 @@ impl ::protobuf::Clear for BlockchainHeader {
         self.clear_merkle_root();
         self.clear_blockchain_confirmations_in_parent_count();
         self.clear_marked_txs();
+        self.clear_marked_tx_count();
         self.unknown_fields.clear();
     }
 }
@@ -5592,9 +7110,13 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     \x03eth\x18\x02\x20\x03(\x0b2\x14.bc.BlockchainHeaderR\x03eth\x12&\n\x03\
     lsk\x18\x03\x20\x03(\x0b2\x14.bc.BlockchainHeaderR\x03lsk\x12&\n\x03neo\
     \x18\x04\x20\x03(\x0b2\x14.bc.BlockchainHeaderR\x03neo\x12&\n\x03wav\x18\
-    \x05\x20\x03(\x0b2\x14.bc.BlockchainHeaderR\x03wav\"\xb6\x07\n\x07BcBloc\
-    k\x12\x12\n\x04hash\x18\x01\x20\x01(\tR\x04hash\x12#\n\rprevious_hash\
-    \x18\x02\x20\x01(\tR\x0cpreviousHash\x12\x18\n\x07version\x18\x03\x20\
+    \x05\x20\x03(\x0b2\x14.bc.BlockchainHeaderR\x03wav\"\x93\x01\n\x14Blockc\
+    hainHeaderRefs\x12\x17\n\x07btc_ref\x18\x01\x20\x03(\tR\x06btcRef\x12\
+    \x17\n\x07eth_ref\x18\x02\x20\x03(\tR\x06ethRef\x12\x17\n\x07lsk_ref\x18\
+    \x03\x20\x03(\tR\x06lskRef\x12\x17\n\x07neo_ref\x18\x04\x20\x03(\tR\x06n\
+    eoRef\x12\x17\n\x07wav_ref\x18\x05\x20\x03(\tR\x06wavRef\"\xb6\x07\n\x07\
+    BcBlock\x12\x12\n\x04hash\x18\x01\x20\x01(\tR\x04hash\x12#\n\rprevious_h\
+    ash\x18\x02\x20\x01(\tR\x0cpreviousHash\x12\x18\n\x07version\x18\x03\x20\
     \x01(\x04R\x07version\x12%\n\x0eschema_version\x18\x04\x20\x01(\x04R\rsc\
     hemaVersion\x12\x16\n\x06height\x18\x05\x20\x01(\x04R\x06height\x12\x14\
     \n\x05miner\x18\x06\x20\x01(\tR\x05miner\x12\x1e\n\ndifficulty\x18\x07\
@@ -5615,53 +7137,77 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     unt\x18\x18\x20\x01(\x04R\x16blockchainHeadersCount\x12D\n\x12blockchain\
     _headers\x18\x19\x20\x01(\x0b2\x15.bc.BlockchainHeadersR\x11blockchainHe\
     aders\x12@\n\x1cblockchain_fingerprints_root\x18\x1a\x20\x01(\tR\x1abloc\
-    kchainFingerprintsRoot\"J\n\x08OutPoint\x12\x14\n\x05value\x18\x01\x20\
-    \x01(\x0cR\x05value\x12\x12\n\x04hash\x18\x02\x20\x01(\tR\x04hash\x12\
-    \x14\n\x05index\x18\x03\x20\x01(\x04R\x05index\"\xaf\x01\n\x0eWalletOutP\
-    oint\x12(\n\x08outpoint\x18\x01\x20\x01(\x0b2\x0c.bc.OutPointR\x08outpoi\
-    nt\x12'\n\x0fcallback_script\x18\x02\x20\x01(\x0cR\x0ecallbackScript\x12\
-    '\n\x0foriginal_script\x18\x03\x20\x01(\x0cR\x0eoriginalScript\x12!\n\
-    \x0cblock_height\x18\x04\x20\x01(\x04R\x0bblockHeight\"\xeb\x04\n\nWalle\
-    tData\x12!\n\x0cblock_height\x18\x01\x20\x01(\x04R\x0bblockHeight\x12\
-    \x1d\n\nblock_hash\x18\x02\x20\x01(\tR\tblockHash\x12Z\n\x1funconfirmed_\
-    spendable_outpoints\x18\x03\x20\x03(\x0b2\x12.bc.WalletOutPointR\x1dunco\
-    nfirmedSpendableOutpoints\x12C\n\x13spendable_outpoints\x18\x04\x20\x03(\
-    \x0b2\x12.bc.WalletOutPointR\x12spendableOutpoints\x12X\n\x1ecollaterali\
-    zed_maker_outpoints\x18\x05\x20\x03(\x0b2\x12.bc.WalletOutPointR\x1ccoll\
-    ateralizedMakerOutpoints\x12`\n\"collateralized_unmatched_outpoints\x18\
-    \x06\x20\x03(\x0b2\x12.bc.WalletOutPointR\x20collateralizedUnmatchedOutp\
-    oints\x12\\\n\x20collateralized_matched_outpoints\x18\x07\x20\x03(\x0b2\
-    \x12.bc.WalletOutPointR\x1ecollateralizedMatchedOutpoints\x12`\n\"collat\
-    eralized_spendable_outpoints\x18\x08\x20\x03(\x0b2\x12.bc.WalletOutPoint\
-    R\x20collateralizedSpendableOutpoints\"\xa5\x02\n\x0bTransaction\x12\x18\
-    \n\x07version\x18\x01\x20\x01(\x04R\x07version\x12\x14\n\x05nonce\x18\
-    \x02\x20\x01(\tR\x05nonce\x12\x12\n\x04hash\x18\x03\x20\x01(\tR\x04hash\
-    \x12\x1a\n\x08overline\x18\x04\x20\x01(\tR\x08overline\x12\x1b\n\tnin_co\
-    unt\x18\x05\x20\x01(\x04R\x08ninCount\x12\x1d\n\nnout_count\x18\x06\x20\
-    \x01(\x04R\tnoutCount\x12,\n\x06inputs\x18\x07\x20\x03(\x0b2\x14.bc.Tran\
-    sactionInputR\x06inputs\x12/\n\x07outputs\x18\x08\x20\x03(\x0b2\x15.bc.T\
-    ransactionOutputR\x07outputs\x12\x1b\n\tlock_time\x18\t\x20\x01(\rR\x08l\
-    ockTime\")\n\x13UnspentTransactions\x12\x12\n\x04utxo\x18\x01\x20\x03(\t\
-    R\x04utxo\"\x85\x01\n\x10TransactionInput\x12)\n\tout_point\x18\x01\x20\
-    \x01(\x0b2\x0c.bc.OutPointR\x08outPoint\x12#\n\rscript_length\x18\x02\
-    \x20\x01(\rR\x0cscriptLength\x12!\n\x0cinput_script\x18\x03\x20\x01(\x0c\
-    R\x0binputScript\"\xc7\x01\n\x04Utxo\x12-\n\x06output\x18\x01\x20\x01(\
-    \x0b2\x15.bc.TransactionOutputR\x06output\x12\x17\n\x07tx_hash\x18\x02\
-    \x20\x01(\tR\x06txHash\x12\x19\n\x08tx_index\x18\x03\x20\x01(\x04R\x07tx\
-    Index\x12\x1d\n\nblock_hash\x18\x04\x20\x01(\tR\tblockHash\x12!\n\x0cblo\
-    ck_height\x18\x05\x20\x01(\x04R\x0bblockHeight\x12\x1a\n\x08coinbase\x18\
-    \x06\x20\x01(\x08R\x08coinbase\"\x87\x01\n\x11TransactionOutput\x12\x14\
-    \n\x05value\x18\x01\x20\x01(\x0cR\x05value\x12\x12\n\x04unit\x18\x02\x20\
-    \x01(\x0cR\x04unit\x12#\n\rscript_length\x18\x03\x20\x01(\rR\x0cscriptLe\
-    ngth\x12#\n\routput_script\x18\x04\x20\x01(\x0cR\x0coutputScript\"\xd0\
-    \x02\n\x10BlockchainHeader\x12\x1e\n\nblockchain\x18\x01\x20\x01(\tR\nbl\
-    ockchain\x12\x12\n\x04hash\x18\x02\x20\x01(\tR\x04hash\x12#\n\rprevious_\
-    hash\x18\x03\x20\x01(\tR\x0cpreviousHash\x12\x1c\n\ttimestamp\x18\x04\
-    \x20\x01(\x04R\ttimestamp\x12\x16\n\x06height\x18\x05\x20\x01(\x04R\x06h\
-    eight\x12\x1f\n\x0bmerkle_root\x18\x06\x20\x01(\tR\nmerkleRoot\x12V\n(bl\
-    ockchain_confirmations_in_parent_count\x18\x07\x20\x01(\x04R$blockchainC\
-    onfirmationsInParentCount\x124\n\nmarked_txs\x18\x08\x20\x03(\x0b2\x15.b\
-    c.MarkedTransactionR\tmarkedTxsb\x06proto3\
+    kchainFingerprintsRoot\"\xc3\x07\n\nBcBlockRef\x12\x12\n\x04hash\x18\x01\
+    \x20\x01(\tR\x04hash\x12#\n\rprevious_hash\x18\x02\x20\x01(\tR\x0cprevio\
+    usHash\x12\x18\n\x07version\x18\x03\x20\x01(\x04R\x07version\x12%\n\x0es\
+    chema_version\x18\x04\x20\x01(\x04R\rschemaVersion\x12\x16\n\x06height\
+    \x18\x05\x20\x01(\x04R\x06height\x12\x14\n\x05miner\x18\x06\x20\x01(\tR\
+    \x05miner\x12\x1e\n\ndifficulty\x18\x07\x20\x01(\tR\ndifficulty\x12\x1c\
+    \n\ttimestamp\x18\x08\x20\x01(\x04R\ttimestamp\x12\x1f\n\x0bmerkle_root\
+    \x18\t\x20\x01(\tR\nmerkleRoot\x12\x1d\n\nchain_root\x18\n\x20\x01(\tR\t\
+    chainRoot\x12\x1a\n\x08distance\x18\x0b\x20\x01(\tR\x08distance\x12%\n\
+    \x0etotal_distance\x18\x0c\x20\x01(\tR\rtotalDistance\x12\x14\n\x05nonce\
+    \x18\r\x20\x01(\tR\x05nonce\x12\x1b\n\tnrg_grant\x18\x0e\x20\x01(\x04R\
+    \x08nrgGrant\x12\x10\n\x03twn\x18\x0f\x20\x01(\x04R\x03twn\x12\x10\n\x03\
+    tws\x18\x10\x20\x03(\tR\x03tws\x12#\n\remblem_weight\x18\x11\x20\x01(\
+    \x04R\x0cemblemWeight\x12A\n\x1demblem_chain_fingerprint_root\x18\x12\
+    \x20\x01(\tR\x1aemblemChainFingerprintRoot\x120\n\x14emblem_chain_addres\
+    s\x18\x13\x20\x01(\tR\x12emblemChainAddress\x12\x19\n\x08tx_count\x18\
+    \x14\x20\x01(\x04R\x07txCount\x12!\n\x03txs\x18\x15\x20\x03(\x0b2\x0f.bc\
+    .TransactionR\x03txs\x12\x1e\n\x0btx_fee_base\x18\x16\x20\x01(\x04R\ttxF\
+    eeBase\x121\n\x15tx_distance_sum_limit\x18\x17\x20\x01(\x04R\x12txDistan\
+    ceSumLimit\x128\n\x18blockchain_headers_count\x18\x18\x20\x01(\x04R\x16b\
+    lockchainHeadersCount\x12N\n\x16blockchain_header_refs\x18\x19\x20\x01(\
+    \x0b2\x18.bc.BlockchainHeaderRefsR\x14blockchainHeaderRefs\x12@\n\x1cblo\
+    ckchain_fingerprints_root\x18\x1a\x20\x01(\tR\x1ablockchainFingerprintsR\
+    oot\"J\n\x08OutPoint\x12\x14\n\x05value\x18\x01\x20\x01(\x0cR\x05value\
+    \x12\x12\n\x04hash\x18\x02\x20\x01(\tR\x04hash\x12\x14\n\x05index\x18\
+    \x03\x20\x01(\x04R\x05index\"\xaf\x01\n\x0eWalletOutPoint\x12(\n\x08outp\
+    oint\x18\x01\x20\x01(\x0b2\x0c.bc.OutPointR\x08outpoint\x12'\n\x0fcallba\
+    ck_script\x18\x02\x20\x01(\x0cR\x0ecallbackScript\x12'\n\x0foriginal_scr\
+    ipt\x18\x03\x20\x01(\x0cR\x0eoriginalScript\x12!\n\x0cblock_height\x18\
+    \x04\x20\x01(\x04R\x0bblockHeight\"\xeb\x04\n\nWalletData\x12!\n\x0cbloc\
+    k_height\x18\x01\x20\x01(\x04R\x0bblockHeight\x12\x1d\n\nblock_hash\x18\
+    \x02\x20\x01(\tR\tblockHash\x12Z\n\x1funconfirmed_spendable_outpoints\
+    \x18\x03\x20\x03(\x0b2\x12.bc.WalletOutPointR\x1dunconfirmedSpendableOut\
+    points\x12C\n\x13spendable_outpoints\x18\x04\x20\x03(\x0b2\x12.bc.Wallet\
+    OutPointR\x12spendableOutpoints\x12X\n\x1ecollateralized_maker_outpoints\
+    \x18\x05\x20\x03(\x0b2\x12.bc.WalletOutPointR\x1ccollateralizedMakerOutp\
+    oints\x12`\n\"collateralized_unmatched_outpoints\x18\x06\x20\x03(\x0b2\
+    \x12.bc.WalletOutPointR\x20collateralizedUnmatchedOutpoints\x12\\\n\x20c\
+    ollateralized_matched_outpoints\x18\x07\x20\x03(\x0b2\x12.bc.WalletOutPo\
+    intR\x1ecollateralizedMatchedOutpoints\x12`\n\"collateralized_spendable_\
+    outpoints\x18\x08\x20\x03(\x0b2\x12.bc.WalletOutPointR\x20collateralized\
+    SpendableOutpoints\"\xa5\x02\n\x0bTransaction\x12\x18\n\x07version\x18\
+    \x01\x20\x01(\x04R\x07version\x12\x14\n\x05nonce\x18\x02\x20\x01(\tR\x05\
+    nonce\x12\x12\n\x04hash\x18\x03\x20\x01(\tR\x04hash\x12\x1a\n\x08overlin\
+    e\x18\x04\x20\x01(\tR\x08overline\x12\x1b\n\tnin_count\x18\x05\x20\x01(\
+    \x04R\x08ninCount\x12\x1d\n\nnout_count\x18\x06\x20\x01(\x04R\tnoutCount\
+    \x12,\n\x06inputs\x18\x07\x20\x03(\x0b2\x14.bc.TransactionInputR\x06inpu\
+    ts\x12/\n\x07outputs\x18\x08\x20\x03(\x0b2\x15.bc.TransactionOutputR\x07\
+    outputs\x12\x1b\n\tlock_time\x18\t\x20\x01(\rR\x08lockTime\")\n\x13Unspe\
+    ntTransactions\x12\x12\n\x04utxo\x18\x01\x20\x03(\tR\x04utxo\"\x85\x01\n\
+    \x10TransactionInput\x12)\n\tout_point\x18\x01\x20\x01(\x0b2\x0c.bc.OutP\
+    ointR\x08outPoint\x12#\n\rscript_length\x18\x02\x20\x01(\rR\x0cscriptLen\
+    gth\x12!\n\x0cinput_script\x18\x03\x20\x01(\x0cR\x0binputScript\"\xc7\
+    \x01\n\x04Utxo\x12-\n\x06output\x18\x01\x20\x01(\x0b2\x15.bc.Transaction\
+    OutputR\x06output\x12\x17\n\x07tx_hash\x18\x02\x20\x01(\tR\x06txHash\x12\
+    \x19\n\x08tx_index\x18\x03\x20\x01(\x04R\x07txIndex\x12\x1d\n\nblock_has\
+    h\x18\x04\x20\x01(\tR\tblockHash\x12!\n\x0cblock_height\x18\x05\x20\x01(\
+    \x04R\x0bblockHeight\x12\x1a\n\x08coinbase\x18\x06\x20\x01(\x08R\x08coin\
+    base\"\x87\x01\n\x11TransactionOutput\x12\x14\n\x05value\x18\x01\x20\x01\
+    (\x0cR\x05value\x12\x12\n\x04unit\x18\x02\x20\x01(\x0cR\x04unit\x12#\n\r\
+    script_length\x18\x03\x20\x01(\rR\x0cscriptLength\x12#\n\routput_script\
+    \x18\x04\x20\x01(\x0cR\x0coutputScript\"\xf8\x02\n\x10BlockchainHeader\
+    \x12\x1e\n\nblockchain\x18\x01\x20\x01(\tR\nblockchain\x12\x12\n\x04hash\
+    \x18\x02\x20\x01(\tR\x04hash\x12#\n\rprevious_hash\x18\x03\x20\x01(\tR\
+    \x0cpreviousHash\x12\x1c\n\ttimestamp\x18\x04\x20\x01(\x04R\ttimestamp\
+    \x12\x16\n\x06height\x18\x05\x20\x01(\x04R\x06height\x12\x1f\n\x0bmerkle\
+    _root\x18\x06\x20\x01(\tR\nmerkleRoot\x12V\n(blockchain_confirmations_in\
+    _parent_count\x18\x07\x20\x01(\x04R$blockchainConfirmationsInParentCount\
+    \x124\n\nmarked_txs\x18\x08\x20\x03(\x0b2\x15.bc.MarkedTransactionR\tmar\
+    kedTxs\x12&\n\x0fmarked_tx_count\x18\t\x20\x01(\x04R\rmarkedTxCountb\x06\
+    proto3\
 ";
 
 static mut file_descriptor_proto_lazy: ::protobuf::lazy::Lazy<::protobuf::descriptor::FileDescriptorProto> = ::protobuf::lazy::Lazy {
