@@ -12,3 +12,4 @@ Cargo.lock
 
 bcjs/
 protos/
+src/protos/
