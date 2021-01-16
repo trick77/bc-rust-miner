@@ -12,7 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      PROTOBUF_VERSION: 3.6.1
+      PROTOBUF_VERSION: 3.14.0
       RUST_BACKTRACE: full
     steps:
     - name: Checkout sources
@@ -23,13 +23,12 @@ jobs:
       with:
         profile: minimal
         toolchain: nightly
-        override: true
 
     - name: Cache protobuf
       uses: actions/cache@v2
       with:
         path: ~/pb
-        key: pb-${{ runner.os }}
+        key: protobuf-${{ runner.os }}
     - name: Install protobuf
       run: ci/install-protobuf.sh
       shell: bash
