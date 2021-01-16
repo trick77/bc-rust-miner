@@ -1,5 +1,4 @@
-name: Rust
-
+name: ci
 on:
   push:
     branches: [ master ]
@@ -8,14 +7,13 @@ on:
 
 env:
   CARGO_TERM_COLOR: always
-  PROTOBUF_VERSION: 3.6.1
-  RUST_BACKTRACE: full
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
+    env:
+      PROTOBUF_VERSION: 3.6.1
+      RUST_BACKTRACE: full
     steps:
     - name: Checkout sources
       uses: actions/checkout@v2
@@ -26,6 +24,7 @@ jobs:
         toolchain: nightly
         override: true
     - name: Cache protobuf
+      id: cache-pb
       uses: actions/cache@v2
       env:
         cache-name: pb
@@ -33,6 +32,7 @@ jobs:
         key: pb-linux
         path: ~/pb
     - name: Install protobuf
+      if: steps.cache-pb.outputs.cache-hit != 'true'
       run: ci/install-protobuf.sh
       shell: bash
     - name: Protoc check
