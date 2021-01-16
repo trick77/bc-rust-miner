@@ -2,7 +2,7 @@
 ![MIT licensed](https://img.shields.io/badge/license-MIT-green)
 ![Rust](https://github.com/trick77/bc-rust-miner/workflows/Rust/badge.svg)
 
-An attempt to resuscitate an old Block Collider Rust miner implementation by @korczis but be prepared to Waietng... a lot
+An attempt to resuscitate an old Block Collider Rust miner implementation by @korczis just for shits 'n giggles.
 
 ## How to build
 
