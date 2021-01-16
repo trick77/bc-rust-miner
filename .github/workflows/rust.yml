@@ -20,13 +20,13 @@ jobs:
     - name: Checkout sources
       uses: actions/checkout@v2
     - name: Cache protobuf
-      id: cache-pb
       uses: actions/cache@v2
+      env:
+        cache-name: pb
       with:
-        key: pb-${{ runner.os }}
+        key: pb-linux
         path: ~/pb
     - name: Install protobuf
-      if: steps.cache-pb.outputs.cache-hit != 'true'
       run: ci/install-protobuf.sh
       shell: bash
     - name: Protoc check
