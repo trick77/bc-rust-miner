@@ -17,26 +17,26 @@ jobs:
     steps:
     - name: Checkout sources
       uses: actions/checkout@v2
+
     - name: Install toolchain
       uses: actions-rs/toolchain@v1
       with:
         profile: minimal
         toolchain: nightly
         override: true
+
     - name: Cache protobuf
-      id: cache-pb
       uses: actions/cache@v2
-      env:
-        cache-name: pb
       with:
-        key: pb-linux
         path: ~/pb
+        key: pb-linux
     - name: Install protobuf
       run: ci/install-protobuf.sh
       shell: bash
     - name: Protoc check
       run: protoc --version
       shell: bash
+
     - name: Build
       run: cargo build --verbose
     - name: Run tests

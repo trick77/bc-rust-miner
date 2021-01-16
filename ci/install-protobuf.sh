@@ -45,8 +45,6 @@ fi
 
 cd
 ls -la
-ls -la pb
-ls -la pb/bin
 
 rm -rf pb
 mkdir pb
@@ -88,6 +86,11 @@ case `uname` in
         die "unknown uname: `uname`"
     ;;
 esac
+
+cd
+ls -la
+cd pb
+ls -la
 
 $HOME/pb/bin/protoc --version
 
