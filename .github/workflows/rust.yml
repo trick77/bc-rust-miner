@@ -17,13 +17,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout sources
+      uses: actions/checkout@v2
     - name: Install protobuf
       run: ci/install-protobuf.sh
       shell: bash
     - name: Protoc check
       run: protoc --version
       shell: bash
-    - uses: actions/checkout@v2
     - name: Build
       run: cargo build --verbose
     - name: Run tests
