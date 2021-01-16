@@ -7,7 +7,7 @@ An attempt to resuscitate an old Block Collider Rust miner implementation by @ko
 ## How to build
 
 ```
-./get-protos.sh
+./update-protos.sh
 rustup install nightly
 rustup update
 rustup component add rust-src
