@@ -212,7 +212,7 @@ fn main() {
     };
 
     let mut server = grpc::ServerBuilder::new_plain();
-    let default_port = String::from("50051");
+    let default_port = String::from("50052");
     let port: u16 = env::var("BC_GRPC_RUST_MINER_PORT")
         .ok()
         .unwrap_or(default_port)
