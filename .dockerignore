@@ -1,0 +1,8 @@
+bcjs/
+fanout/
+ci/
+target/
+update-protos.sh
+.git
+.github
+*.md
