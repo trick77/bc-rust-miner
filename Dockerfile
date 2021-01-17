@@ -1,17 +1,23 @@
-FROM rust:142 as build
+FROM rust:1.49 as build
+WORKDIR /usr/src
 
-COPY ./src ./
-RUN cargo build --release
-RUN mkdir -p /build-out
-RUN cp target/release/bcrust-miner /build-out
+RUN apt-get update && \
+    apt-get dist-upgrade -y && \
+    apt-get install -y musl-tools && \
+    rustup target add x86_64-unknown-linux-musl
 
-FROM debian:stable-slim
-ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get -y install ca-certificates libssl-dev && rm -rf /var/lib/apt/lists/*
+RUN USER=root cargo new miner
+WORKDIR /usr/src/miner
+COPY Cargo.toml Cargo.lock ./
+RUN cargo install --target x86_64-unknown-linux-musl --path .
 
-COPY --from=build /build-out/bcrust-miner
+COPY src ./src
+
+RUN cargo install --target x86_64-unknown-linux-musl --path .
+
+FROM scratch
+COPY --from=build /usr/local/cargo/bin/bcrust-miner .
+COPY static .
 
 USER 1001
-CMD /bcrust-miner
-
-
+CMD ["./bcrust-miner"]
