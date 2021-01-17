@@ -1,23 +1,27 @@
 FROM rust:1.49 as build
-WORKDIR /usr/src
 
 RUN apt-get update && \
     apt-get dist-upgrade -y && \
-    apt-get install -y musl-tools && \
+    apt-get install -y unzip musl-tools && \
     rustup target add x86_64-unknown-linux-musl
 
-RUN USER=root cargo new miner
-WORKDIR /usr/src/miner
-COPY Cargo.toml Cargo.lock ./
-RUN cargo install --target x86_64-unknown-linux-musl --path .
+WORKDIR /usr/src
 
-COPY src ./src
+# Install protoc
+ARG PROTOC_VERSION=3.14.0
+RUN curl -OL https://github.com/google/protobuf/releases/download/v$PROTOC_VERSION/protoc-$PROTOC_VERSION-linux-x86_64.zip \
+    && unzip protoc-$PROTOC_VERSION-linux-x86_64.zip -d ./ \
+    && rm -rf protoc-$PROTOC_VERSION-linux-x86_64.zip
+ENV PATH "/usr/src/bin:$PATH"
 
-RUN cargo install --target x86_64-unknown-linux-musl --path .
+COPY . /usr/src/
+
+RUN cargo install --locked --target x86_64-unknown-linux-musl --path .
 
 FROM scratch
 COPY --from=build /usr/local/cargo/bin/bcrust-miner .
-COPY static .
+#COPY static .
 
 USER 1001
 CMD ["./bcrust-miner"]
+
