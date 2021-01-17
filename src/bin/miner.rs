@@ -37,7 +37,7 @@ impl Miner for MinerImpl {
         _o: grpc::RequestOptions,
         p_in: MinerRequest,
     ) -> grpc::SingleResponse<MinerResponse> {
-        println!("Miner::mine() - {:?}", &p_in);
+        println!("\nMiner::mine() - {:?}", &p_in);
 
         {
             let mut work_id = self.work_id.lock().unwrap();
@@ -147,6 +147,7 @@ impl Miner for MinerImpl {
                             let num = counter.lock().unwrap();
                             response.set_iterations(*num);
                         }
+                        println!("Miner::mine() - solution found {:?}", response);
 
                         {
                             let mut should_exit = request_exit.lock().unwrap();
